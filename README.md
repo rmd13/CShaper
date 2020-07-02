@@ -52,4 +52,6 @@ into `./Data/MembValidation/`. Example data is also available through previous d
       |--Util/: utils for training and testing
     ```
 ### Acknowledgement
-We thank [brats17](https://github.com/taigw/brats17) which we referred to when implementing the code.
+We refered to these repositories when implementing the code,
+* [brats17](https://github.com/taigw/brats17)
+* [NiftyNet](https://github.com/NifTK/NiftyNet)
