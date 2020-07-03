@@ -29,6 +29,7 @@ into `./Data/MembValidation/`. Example data is also available through previous d
     ```buildoutcfg
     python shape_analysis.py ./ConfigMemb/shape_config.txt
     ```
+    The pretrained model is avaliale on [Google Drive](https://drive.google.com/file/d/1ZwKKqAwVWr8YGGtdal-ZVxodyE7PUnb6/view?usp=sharing). Please unzip the file and put them into folder `./ModelCell`.
 * **Structure of folders**: (Folders and files in `.gitignore` are not shown in this repository)
     ```buildoutcfg
     DMapNet is used to segmented membrane stack of C. elegans at cellular level
