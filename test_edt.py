@@ -51,7 +51,7 @@ def test(config_file):
         # ==============================================================
         dataloader = DataLoader(config_data)
         dataloader.load_data()
-        [temp_imgs, temp_weight, img_names, emrbyo_name, temp_bbox, temp_size] = dataloader.get_image_data_with_name(0)
+        [temp_imgs, img_names, emrbyo_name, temp_bbox, temp_size] = dataloader.get_image_data_with_name(0)
         
         # For axial direction
         temp_img_axial = transpose_volumes(temp_imgs, slice_direction='axial')
