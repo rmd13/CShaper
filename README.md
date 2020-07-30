@@ -6,7 +6,7 @@ Implementation of DMapNet in *Establishment of morphological atlas of Caenorhabd
 \* denotes equal contribution
 
 ### Usage
-This implementation is based on Tensorflow and python3.6, trained with one GPU NVIDIA 2080Ti oon Linux. Steps for training
+This implementation is based on Tensorflow and python3.6, trained with one GPU NVIDIA 2080Ti on Linux. Steps for training
 and testing are listed as below.
 * **Intsall dependency library**:
 ```buildoutcfg
