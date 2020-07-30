@@ -2,22 +2,25 @@ Data/
 *.html
 *.png
 *.pyc
+**.nii.gz
+**.png
+.idea
+**.csv
+**.avi
+run_shape_analysis.sh
+run_test_edt.sh
+
 ModelCell/
 ResultCell/
 ShapeUtil/RobustStat/
 ShapeUtil/TemCellGraph
 
-**.nii.gz
-**.png
-.idea
 ShapeUtil/.ipynb_checkpoints
 /ResultTem
 /ShapeUtil/TemCellGraph
 ./ShapeUtil/tem.csv
 ./ShapeUtil/*.txt
 ResultCell/
-**.csv
-**.avi
 venv
 
 !./ShapeUtil/*.csv
