@@ -1,6 +1,6 @@
 ## CShaper
 
-Implementation for in *Establishment of morphological atlas of Caenorhabditis elegans embryo using deep-learning-based 4D
+Implementation of DMapNet in *Establishment of morphological atlas of Caenorhabditis elegans embryo using deep-learning-based 4D
  segmentation*, by Jianfeng Cao*, Guoye Guan*, Vincy Wing Sze Ho*, Ming-Kin Wong, Lu-Yan Chan, Chao Tang, Zhongying Zhao, & Hong Yan.
 
 \* denotes equal contribution
@@ -52,6 +52,6 @@ into `./Data/MembValidation/`. Example data is also available through previous d
       |--Util/: utils for training and testing
     ```
 ### Acknowledgement
-We refered to these repositories when implementing the code,
+We referred to these repositories when implementing the code,
 * [brats17](https://github.com/taigw/brats17)
 * [NiftyNet](https://github.com/NifTK/NiftyNet)

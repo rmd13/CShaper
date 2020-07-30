@@ -10,7 +10,6 @@ from niftynet.layer.deconvolution import DeconvolutionalLayer
 from niftynet.layer.convolution import ConvLayer, ConvolutionalLayer
 
 
-
 class DMapNet(TrainableLayer):
     def __init__(self,
                  num_classes,
