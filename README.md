@@ -34,7 +34,7 @@ into `./Data/MembValidation/`. Example data is also available through previous d
     ```buildoutcfg
     DMapNet is used to segmented membrane stack of C. elegans at cellular level
     DMapNet/
-      |--configmemb/: parameters for training, testing and unifying label
+      |--ConfigMemb/: parameters for training, testing and unifying label
       |--Data/: raw membrane, raw nucleus and AceTree file (CD**.csv)
           |--MembTraining/: image data with manual annotations
           |--MembValidation/: image data to be segmented
