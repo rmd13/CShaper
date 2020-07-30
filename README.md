@@ -48,7 +48,6 @@ into `./Data/MembValidation/`. Example data is also available through previous d
           |--AceForLabel/: multiple AceTree files for generating namedictionary
           |--RobustStat/: nucleus lost sration and cell surface...
           |--TemCellGraph/: temporary result for calculating surface, volume...
-        
       |--Util/: utils for training and testing
     ```
 ### Acknowledgement
