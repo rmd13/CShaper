@@ -7,8 +7,8 @@ data_root         = Data/MembTest
 # # [160]: 200309plc1p2, 200309plc1p3, 200310plc1p2, 200311plc1p1, 200315plc1p2, 200315plc1p3, 200316plc1p1, 200316plc1p2
 # # [155]: 200314plc1p2
 # # [150]: 200314plc1p1, 181210plc1p3
-data_names        = [200710hmr1plc1p1, 200710hmr1plc1p2, 200710hmr1plc1p3]
-max_time          = 99
+data_names        = [181210plc1p1, 181210plc1p2, 181210plc1p3]
+max_time          = 200
 save_folder       = ResultCell/BinaryMemb
 with_ground_truth = False
 label_edt_transform   = True
@@ -29,10 +29,10 @@ save_predicted_map   = False
 slice_direction      = sagittal
 direction_fusion     = True
 batch_size           = 2
-only_post_process    = False
+only_post_process    = True
 post_process         = True
-nucleus_filter       = False
-
+nucleus_as_seeds     = False
+nucleus_filter       = True
 
 ## parameters for post processing
 [segdata]

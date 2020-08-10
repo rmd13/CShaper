@@ -17,18 +17,17 @@ Colors=['red','red', 'red', 'blue','blue','blue']
 # # [155]: 200314plc1p2
 # # [150]: 200314plc1p1, 181210plc1p3
 
-t_max = 200
 nucleus_folder = "./ResultCell/NucleusLoc"
-# get all embryos names
-embryos =[os.path.join(nucleus_folder, embryo_name) for embryo_name in ["170704plc1p1"]]
 
+# get all embryos names
+embryos = [os.path.join(nucleus_folder, embryo_name) for embryo_name in os.listdir(nucleus_folder) if "plc" in embryo_name]
+# embryos =[os.path.join(nucleus_folder, embryo_name) for embryo_name in ["170704plc1p1"]]  <-- use this to specify the embryo
 with open("./ShapeUtil/number_dictionary.txt", "rb") as f:
     number_dict = pickle.load(f)
 
 #######################################
 # measure nucleus lost ratio
 ######################################
-
 # plt.clf()
 # for i in range(len(embryos)):
 # # For the first embryo
@@ -84,6 +83,7 @@ for embryo in embryos:
     surface_stat = pd.DataFrame([], columns=[], dtype=np.float32)
     volume_lists = []
     surface_lists = []
+    t_max = len(glob.glob(os.path.join(embryo, "*_nucLoc.csv")))
     for t in tqdm(range(1, t_max + 1), desc="Processing {}".format(embryo.split('/')[-1])):
         nucleus_loc_file = os.path.join(embryo, os.path.basename(embryo)+"_"+str(t).zfill(3)+"_nucLoc"+".csv")
         pd_loc = pd.read_csv(nucleus_loc_file)
@@ -91,18 +91,17 @@ for embryo in embryos:
         cell_volume_surface = cell_volume_surface.set_index("nucleus_name")
         volume_lists.append(cell_volume_surface["volume"].to_frame().T.dropna(axis=1))
         surface_lists.append(cell_volume_surface["surface"].to_frame().T.dropna(axis=1))
+    if len(volume_lists) == 0:
+        continue
     volume_stat = pd.concat(volume_lists, keys=range(1, t_max+1), ignore_index=True, axis=0, sort=False, join="outer")
     surface_stat = pd.concat(surface_lists, keys=range(1, t_max+1), ignore_index=True, axis=0, sort=False, join="outer")
     volume_stat.to_csv(os.path.join("./ShapeUtil/RobustStat", embryo.split('/')[-1] + "_volume"+'.csv'))
     surface_stat.to_csv(os.path.join("./ShapeUtil/RobustStat", embryo.split('/')[-1] + "_surface"+'.csv'))
 
-#=================================save for GUI======================
+# =================================save for GUI======================
 # for column in volume_stat.columns:
-#=================================save for GUI======================
-
-
+# =================================save for GUI======================
 # output and draw volume
-
 surfaces = glob.glob(os.path.join("./ShapeUtil/RobustStat", "*surface.csv"))
 volumes = glob.glob(os.path.join("./ShapeUtil/RobustStat", "*volume.csv"))
 
@@ -112,6 +111,7 @@ embryo_names = []
 times = []
 cells = []
 for surface_file, volume_file in zip(surfaces, volumes):
+
     plt.clf()
     embryo_name = volume_file.split('/')[-1].split('_')[0]
     # load time tree file to get nucleus fir

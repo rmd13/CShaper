@@ -61,7 +61,7 @@ def load_nifty_volume_as_array(filename, with_header = False):
     else:
         return data
 
-def save_array_as_nifty_volume(data, filename, reference_name = None):
+def save_array_as_nifty_volume(data, filename, reference_name = None, header=None):
     """
     save a numpy array as nifty image
     :param Data: a numpy array with shape [Depth, Height, Width]

@@ -78,7 +78,7 @@ def run_shape_analysis(config):
         shutil.rmtree('./ShapeUtil/TemCellGraph')
     # save statistical embryonic files
     # delete columns with all zeros for efficiency
-    stat_embryo = stat_embryo.loc[:, ((stat_embryo != 0)&(~np.isnan(stat_embryo)) ).any(axis=0)]
+    stat_embryo = stat_embryo.loc[:, ((stat_embryo != 0)&(~np.isnan(stat_embryo))).any(axis=0)]
     save_file_name = os.path.join(config['save_folder'], config['embryo_name']+'_Stat.txt')
     save_file_name_csv = os.path.join(config['save_folder'], config['embryo_name']+'_Stat.csv')
     if not os.path.isdir(config['save_folder']):

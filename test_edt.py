@@ -159,8 +159,9 @@ def test(config_file):
         config_post['segdata']['membseg_path'] = config_data['save_folder']
         config_post['result']['postseg_folder'] = config_data['save_folder'] + 'Postseg'
         config_post['result']['nucleus_filter'] = config_test['nucleus_filter']
-        if not os.path.isdir(config_post['result']['postseg_folder'] ):
-            os.makedirs(config_post['result']['postseg_folder'] )
+        config_post['result']['nucleus_as_seed'] = config_test['nucleus_as_seed']
+        if not os.path.isdir(config_post['result']['postseg_folder']):
+            os.makedirs(config_post['result']['postseg_folder'])
 
         post_process(config_post)
 
